@@ -5,7 +5,8 @@ output "my_pub_ip" {
 output "username" {
   value = aws_lightsail_instance.custom.username
 }
-
-output "keyname" {
+/*
+#output "keyname" {
   value = aws_lightsail_instance.custom.key_pair_name
 }
+*/
