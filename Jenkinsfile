@@ -1,15 +1,19 @@
-Pipeline{
-agent none
-stages{
-stage ('init'){
-steps{
-  sh 'terraform init -upgrade -no-color'
+pipeline {
+    agent none
+    stages {
+        stage('Init') {
+            steps {
+                script {
+                    sh 'terraform init -upgrade -no-color'
+                }
+            }
+        }
+        stage('Validate') {
+            steps {
+                script {
+                    sh 'terraform validate -no-color'
+                }
+            }
+        }
     }
-  }
-stage ('validate'){
-steps{
-sh 'terraform validate -upgrade -no-color'
-    }
-  }
-}
 }
